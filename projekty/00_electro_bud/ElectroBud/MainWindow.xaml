@@ -1,0 +1,74 @@
+﻿<Window x:Class="ElektroBud.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Elektro Bud"
+        Height="560" Width="950"
+        WindowStartupLocation="CenterScreen">
+
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,10">
+            <TextBlock Text="Szukaj (EAN lub nazwa):"  Margin="0,5,10,5"/>
+            <TextBox x:Name="SearchBox" Width="300" Padding="4" TextChanged="SearchBoxTextChanged"/>
+        </StackPanel>
+
+        <DataGrid x:Name="ProductsTable" Grid.Row="1"
+                  AutoGenerateColumns="False" IsReadOnly="True"
+                  SelectionMode="Single" SelectionChanged="ProductsTableSelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="EAN" Binding="{Binding Ean}" Width="130"/>
+                <DataGridTextColumn Header="Nazwa" Binding="{Binding Name}" Width="*"/>
+                <DataGridTextColumn Header="Kategoria" Binding="{Binding Category}" Width="130"/>
+                <DataGridTextColumn Header="Sektor" Binding="{Binding Sector}" Width="70"/>
+                <DataGridTextColumn Header="Regał" Binding="{Binding Rack}" Width="70"/>
+                <DataGridTextColumn Header="Półka" Binding="{Binding Shelf}" Width="70"/>
+                <DataGridTextColumn Header="Ilość" Binding="{Binding Quantity}" Width="70"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel Grid.Row="2" Margin="0,10,0,0">
+            <WrapPanel>
+                <StackPanel Margin="0,0,10,5" Width="130">
+                    <TextBlock Text="EAN"/>
+                    <TextBox x:Name="EanBox" Padding="3"/>
+                </StackPanel>
+                <StackPanel Margin="0,0,10,5" Width="250">
+                    <TextBlock Text="Nazwa"/>
+                    <TextBox x:Name="NameBox" Padding="3"/>
+                </StackPanel>
+                <StackPanel Margin="0,0,10,5" Width="130">
+                    <TextBlock Text="Kategoria"/>
+                    <TextBox x:Name="CategoryBox" Padding="3"/>
+                </StackPanel>
+                <StackPanel Margin="0,0,10,5" Width="70">
+                    <TextBlock Text="Sektor"/>
+                    <TextBox x:Name="SectorBox" Padding="3"/>
+                </StackPanel>
+                <StackPanel Margin="0,0,10,5" Width="70">
+                    <TextBlock Text="Regał"/>
+                    <TextBox x:Name="RackBox" Padding="3"/>
+                </StackPanel>
+                <StackPanel Margin="0,0,10,5" Width="70">
+                    <TextBlock Text="Półka"/>
+                    <TextBox x:Name="ShelfBox" Padding="3"/>
+                </StackPanel>
+                <StackPanel Margin="0,0,10,5" Width="70">
+                    <TextBlock Text="Ilość"/>
+                    <TextBox x:Name="QuantityBox" Padding="3"/>
+                </StackPanel>
+            </WrapPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                <Button Content="Dodaj" Width="110" Padding="6" Margin="0,0,10,0" Click="AddButtonClick"/>
+                <Button Content="Zapisz zmiany" Width="110" Padding="6" Margin="0,0,10,0" Click="UpdateButtonClick"/>
+                <Button Content="Usuń" Width="110" Padding="6" Margin="0,0,10,0" Click="DeleteButtonClick"/>
+                <Button Content="Wyczyść formularz" Width="130" Padding="6" Click="ClearButtonClick"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

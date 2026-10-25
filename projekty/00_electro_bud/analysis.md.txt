@@ -1,0 +1,33 @@
+# Elektro-Bud – analiza wymagań
+
+## 1. Opis problemu
+Hurtownia „Elektro-Bud" prowadzi magazyn ręcznie (dokumenty papierowe, arkusze kalkulacyjne), przez co trudno ustalić aktualne stany magazynowe i lokalizację towaru. Klient chce zastąpić dotychczasowe rozwiązania prostym, szybkim systemem magazynowym. Projekt jest wersją demonstracyjną obejmującą jeden fragment systemu: katalog produktów ze stanami magazynowymi.
+
+## 2. Wymagania funkcjonalne
+Aplikacja wyświetla listę produktów w tabeli (EAN, nazwa, kategoria, sektor, regał, półka, ilość).
+Użytkownik może dodać nowy produkt.
+Użytkownik może edytować zaznaczony produkt.
+Użytkownik może usunąć zaznaczony produkt (po potwierdzeniu).
+Użytkownik może wyszukiwać produkty po kodzie EAN lub nazwie.
+Kod EAN musi być unikalny.
+Wszystkie pola formularza są wymagane, a ilość musi być liczbą całkowitą nieujemną.
+
+## 3. Wymagania niefunkcjonalne
+Aplikacja desktopowa WPF
+Prosty i czytelny interfejs: jedno okno, formularz pod tabelą.
+Szybka reakcja na działania użytkownika (wyszukiwanie na bieżąco, w czasie poniżej 1–2 sekund).
+Komunikaty o błędach w języku polskim.
+
+## 4. Zakres aplikacji
+
+**Zrealizowane:** katalog produktów ze stanem magazynowym (lista, dodawanie, edycja, usuwanie, wyszukiwanie po EAN lub nazwie).
+**Ograniczenia:** dane są przechowywane tylko w pamięci programu (kolekcja lista poniewaz jest dynamiczna) i nie są zapisywane po zamknięciu aplikacji.
+**Poza zakresem:** przyjęcia i wydania towaru, historia operacji, konta użytkowników i role, raporty.
+
+## 5. Źródła
+
+WPF: https://learn.microsoft.com/en-us/dotnet/desktop/wpf/overview/
+DataGrid: https://wpf-tutorial.com/pl/89/kontrolka-datagrid/kolumny-w-datagrid/
+MessageBox: https://www.endmemo.com/prg/csharp/messagebox.php 
+parse: https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/strings/how-to-determine-whether-a-string-represents-a-numeric-value
+Lista Collection: https://www.geeksforgeeks.org/c-sharp/collections-in-c-sharp/
